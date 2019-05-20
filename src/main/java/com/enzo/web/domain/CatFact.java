@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @author enzo
  *
  */
-@JsonIgnoreProperties(value = { "_id", "user", "userUpvoted" })
+@JsonIgnoreProperties(value = { "_id", "user","upvotes", "userUpvoted" })
 public class CatFact 
 {
 	String _id;

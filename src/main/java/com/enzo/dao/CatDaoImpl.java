@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.enzo.web.domain.All;
-import com.enzo.web.domain.CatFacts;
+import com.enzo.web.domain.CatFact;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +37,7 @@ public class CatDaoImpl implements CatDao {
 	String server = "https://cat-fact.herokuapp.com";
 	String uri = "/facts";
 	
-	List<CatFacts> cats = new ArrayList<CatFacts>();
+	List<CatFact> cats = new ArrayList<CatFact>();
 	
 	@PostConstruct
 	public void init()
@@ -78,12 +78,12 @@ public class CatDaoImpl implements CatDao {
 	}
 	
 	@Override
-	public List<CatFacts> getAllCats() {
+	public List<CatFact> getAllCats() {
 		return cats;
 	}
 
 	@Override
-	public List<CatFacts> findCat() {
+	public List<CatFact> findCat() {
 		return null;
 	}
 	

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.enzo.dao.CatDao;
-import com.enzo.web.domain.CatFacts;
+import com.enzo.web.domain.CatFact;
 
 /**
  * @author enzo
@@ -22,12 +22,12 @@ public class CatServiceImpl implements CatService {
 	CatDao catdao;
 
 	@Override
-	public List<CatFacts> findCat() {
+	public List<CatFact> findCat() {
 		return catdao.getAllCats();
 	}
 
 	@Override
-	public List<CatFacts> getAllCats() {
+	public List<CatFact> getAllCats() {
 		return catdao.getAllCats();
 	}
 }

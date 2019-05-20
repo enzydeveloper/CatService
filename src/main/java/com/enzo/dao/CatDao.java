@@ -2,10 +2,10 @@ package com.enzo.dao;
 
 import java.util.List;
 
-import com.enzo.web.domain.CatFacts;
+import com.enzo.web.domain.CatFact;
 
 public interface CatDao {
-	public List<CatFacts> getAllCats();
+	public List<CatFact> getAllCats();
 	
-	public List<CatFacts> findCat();
+	public List<CatFact> findCat();
 }

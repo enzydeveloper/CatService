@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.enzo.dao.CatDao;
-import com.enzo.web.domain.CatFacts;
+import com.enzo.web.domain.CatFact;
 
 @RestController
 @RequestMapping("/api")
@@ -21,12 +21,9 @@ public class CatController {
 	
 	@Autowired
 	CatDao catdao;
-	
-//	private static final String template = "Hello, %s!";
-//	private final AtomicLong counter = new AtomicLong();
 
-	@RequestMapping("/greeting")
-	public List<CatFacts> greeting(@RequestParam(value = "name", defaultValue = "CatFace") String name) {
+	@RequestMapping("/catFacts")
+	public List<CatFact> retrieveAllCatFacts(@RequestParam(value = "name", defaultValue = "CatFace") String name) {
 		
 		logger.debug("Returning cats");
 		

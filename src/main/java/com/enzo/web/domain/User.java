@@ -1,7 +1,7 @@
 package com.enzo.web.domain;
 
 /**
- * Sub element of {@link CatFacts}
+ * Sub element of {@link CatFact}
  * @author enzo
  *
  */

@@ -2,7 +2,7 @@ package com.enzo.service;
 
 import java.util.List;
 
-import com.enzo.web.domain.CatFacts;
+import com.enzo.web.domain.CatFact;
 
 /**
  * 
@@ -10,6 +10,6 @@ import com.enzo.web.domain.CatFacts;
  *
  */
 public interface CatService {
-	List<CatFacts> findCat();
-	List<CatFacts> getAllCats();
+	List<CatFact> findCat();
+	List<CatFact> getAllCats();
 }

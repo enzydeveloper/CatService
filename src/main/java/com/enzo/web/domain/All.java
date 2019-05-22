@@ -5,8 +5,6 @@ package com.enzo.web.domain;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 /**
  * POJO that represents the top lvl JSON response as a container
  * 

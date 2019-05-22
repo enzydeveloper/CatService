@@ -26,6 +26,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
+ * This DAO caches the API from cat-fact and serves as the data layer for the web endpoint
  * @author enzo
  *
  */
@@ -42,11 +43,16 @@ public class CatDaoImpl implements CatDao {
 	@PostConstruct
 	public void init()
 	{
+		//Initialize this DAO and cache in memory
+		setupCatApi();
+	}
+	
+	private void setupCatApi()
+	{
 		RestTemplate rest = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 	    headers.add("Content-Type", "application/json");
 	    headers.add("Accept", "*/*");
-	    
 	    
 		HttpStatus status;
 		
@@ -76,15 +82,31 @@ public class CatDaoImpl implements CatDao {
         	cats = jsonResponse.getAll();
         }
 	}
-	
+	/*
+	 * (non-Javadoc)
+	 * @see com.enzo.dao.CatDao#getAllCats()
+	 */
 	@Override
 	public List<CatFact> getAllCats() {
 		return cats;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.enzo.dao.CatDao#findCat(java.lang.String)
+	 */
 	@Override
-	public List<CatFact> findCat() {
-		return null;
+	public List<CatFact> findCat(String searchCatFactText) {
+		List<CatFact> result = new ArrayList<CatFact>();
+		
+		for(CatFact cf : cats)
+		{
+			if(cf.getText().toUpperCase().contains(searchCatFactText.toUpperCase()))
+			{
+				result.add(cf);
+			}
+		}
+		
+		return result;
 	}
-	
 }

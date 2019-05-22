@@ -11,8 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Main entry point to run a spring boot application standalone
  * @author enzo
- *
  */
 @Configuration 
 @EnableAutoConfiguration

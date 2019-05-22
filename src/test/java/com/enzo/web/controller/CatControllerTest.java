@@ -39,7 +39,7 @@ public class CatControllerTest
 	
 	
 	@Test
-	public void retrieveDetailsForCourse() throws Exception {
+	public void getAllCatsTest() throws Exception {
 
 		List<CatFact> catFacts = new ArrayList<CatFact>();
 		

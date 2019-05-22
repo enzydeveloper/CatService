@@ -2,7 +2,7 @@
 $(document).ready(function(){
 	$.ajax({
 	    type: "GET",
-	    url: "http://localhost:8080/api/greeting",
+	    url: "http://localhost:8080/api/allCatFacts",
 	    dataType: 'json',
 	    success: function (data) {
 	    	
